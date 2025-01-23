@@ -1,4 +1,4 @@
-package com.grimco.vocabulary.ui.screens
+package com.grimco.vocabulary.presentation.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,8 +11,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.grimco.vocabulary.Greeting
-import com.grimco.vocabulary.ui.components.Word
-import com.grimco.vocabulary.viewmodel.WordsViewModel
+import com.grimco.vocabulary.presentation.ui.components.Word
+import com.grimco.vocabulary.presentation.viewmodels.WordsViewModel
 import java.util.UUID
 
 @Composable

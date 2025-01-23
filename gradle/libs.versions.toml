@@ -37,7 +37,7 @@ androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 androidx-navigation = { group="org.jetbrains.androidx.navigation", name="navigation-compose", version.ref="navigation"}
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
-androidx-room-compiler = { module = "androidx.room:room-copiler" , version.ref = "androidx-room"}
+androidx-room-compiler = { module = "androidx.room:room-compiler" , version.ref = "androidx-room"}
 androidx-room-runtime = {  module="androidx.room:room-runtime", version.ref = "androidx-room" }
 androidx-sqlite-bundled = { group = "androidx.sqlite", name="sqlite-bundled", version.ref = "androidx-sqliteBundled" }
 

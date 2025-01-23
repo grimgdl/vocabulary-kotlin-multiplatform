@@ -5,7 +5,7 @@ import androidx.compose.runtime.*
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.grimco.vocabulary.ui.screens.VocabularyScreen
+import com.grimco.vocabulary.presentation.ui.screens.VocabularyScreen
 import kotlinx.serialization.Serializable
 import org.jetbrains.compose.ui.tooling.preview.Preview
 

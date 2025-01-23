@@ -1,4 +1,4 @@
-package com.grimco.vocabulary.viewmodel
+package com.grimco.vocabulary.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

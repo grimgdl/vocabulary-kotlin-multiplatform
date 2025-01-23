@@ -1,4 +1,4 @@
-package com.grimco.vocabulary.ui.components
+package com.grimco.vocabulary.presentation.ui.components
 
 
 import androidx.compose.animation.AnimatedVisibility
