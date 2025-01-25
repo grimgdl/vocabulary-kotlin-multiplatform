@@ -8,8 +8,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlin.serializatoin)
-    alias(libs.plugins.kps)
-    alias(libs.plugins.room)
+
 }
 
 kotlin {
@@ -28,6 +27,7 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -43,7 +43,7 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
 
             implementation(libs.androidx.room.runtime)
-            implementation(libs.androidx.sqlite.bundled)
+
 
         }
         desktopMain.dependencies {
@@ -81,14 +81,9 @@ android {
     }
 }
 
-room {
-    schemaDirectory("$projectDir/schemas")
-}
-
 
 dependencies {
     debugImplementation(compose.uiTooling)
-    ksp(libs.androidx.room.compiler)
 
 }
 
