@@ -1,27 +1,35 @@
 package com.grimco.vocabulary.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import androidx.lifecycle.viewModelScope
+import com.grimco.vocabulary.data.sources.local.WordsDao
+import com.grimco.vocabulary.data.sources.local.entities.WordEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
-class WordsViewModel: ViewModel() {
+class WordsViewModel(private val wordsDao: WordsDao): ViewModel() {
 
-    private val _words = MutableStateFlow<List<String>>(emptyList())
-    val words = _words.asStateFlow()
+    private val _words = wordsDao.getAllWords()
 
+    val words = _words.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = emptyList()
+    )
 
-    init {
-        _words.value = listOf("hola 1", "hola 2", "hola 3", "hola 4")
+    fun removeItem(word: WordEntity) {
+        viewModelScope.launch(Dispatchers.IO) {
+            wordsDao.delete(word)
+        }
+
     }
 
-
-    fun removeItem(item: String) {
-        _words.value -= item
-    }
-
-
-    fun addItem(item: String) {
-        _words.value += item
+    fun addItem(word: WordEntity) {
+        viewModelScope.launch(Dispatchers.IO) {
+            wordsDao.insertWord(word)
+        }
     }
 
 }

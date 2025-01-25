@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "words")
-data class Word(
+data class WordEntity(
     @PrimaryKey
     val id: Long,
     val name: String

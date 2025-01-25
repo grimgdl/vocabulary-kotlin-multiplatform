@@ -4,11 +4,11 @@ import androidx.room.ConstructedBy
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
-import com.grimco.vocabulary.data.sources.local.entities.Word
+import com.grimco.vocabulary.data.sources.local.entities.WordEntity
 
 
 @Database(
-    entities = [Word::class],
+    entities = [WordEntity::class],
     version = 1
 )
 @ConstructedBy(AppDatabaseConstructor::class)

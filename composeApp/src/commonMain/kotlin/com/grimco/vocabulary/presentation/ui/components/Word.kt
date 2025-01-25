@@ -18,14 +18,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import com.grimco.vocabulary.data.sources.local.entities.WordEntity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
 fun Word(
-    label: String,
+    word: WordEntity,
     modifier: Modifier = Modifier,
-    onClickWord: (label: String) -> Unit
+    onClickWord: (word: WordEntity) -> Unit
 ) {
 
     var visibility by remember { mutableStateOf(false) }
@@ -42,14 +43,14 @@ fun Word(
                     scope.launch {
                         visibility = false
                         delay(300)
-                        onClickWord(label)
+                        onClickWord(word)
                     }
                 }
 
         ){
 
             Text(
-                text = label
+                text = word.name
             )
 
             Text("hola  fads")
